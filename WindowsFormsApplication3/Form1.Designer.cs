@@ -206,7 +206,7 @@
             this.Controls.Add(this.textBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "打印机A4纸双面打印系统";
+            this.Text = "打印机A4纸缩印双面打印系统";
             this.ResumeLayout(false);
             this.PerformLayout();
 
