@@ -30,6 +30,7 @@ namespace WindowsFormsApplication3
         {
             textBox1.Text = "";
             textBox2.Text = "";
+            textBox3.Text = "";
             int start = Convert.ToInt32(textBox4.Text);
             int page = Convert.ToInt32(textBox5.Text);
 
