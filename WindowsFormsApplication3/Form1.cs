@@ -72,8 +72,8 @@ namespace WindowsFormsApplication3
                     c = ++i + ",";  
                     d = ++i + ",";
 
-                    textBox1.Text += a + d;
-                    textBox2.Text += c + b;
+                    textBox1.Text += d + a;
+                    textBox2.Text += b + c;
                     
 
 
