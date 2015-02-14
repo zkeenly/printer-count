@@ -38,30 +38,31 @@ namespace WindowsFormsApplication3
             string b = "00";
             string c = "00";
             string d = "00";
+            
             if (checkBox1.Checked == false) //不启用小册子
             {
 
-                for (int i = 1; i <= page; i++) //单面打印机
+                for (int i = start; i <= page; i++) //单面打印机
                 {
                     count.calc(ref a, ref b, ref c, ref d, ref i, ref page);
 
 
                     if (checkBox2.Checked == false)//不启用反面逆序算法
                     {
-                        textBox1.Text += a + b+" ";
-                        textBox2.Text += c + d+" ";
+                        textBox1.Text += a + b;
+                        textBox2.Text += c + d;
                     }
                     else //启用反面逆序算法
                     {
                         
-                        textBox1.Text += a + b +" ";
+                        textBox1.Text += a + b ;
 
-                        textBox2.Text = c + d +" "+ textBox2.Text;
+                        textBox2.Text = c + d + textBox2.Text;
                     }
 
                 }
 
-                for (int i = 1; i <= page; i++) //双面打印机
+                for (int i = start; i <= page; i++) //双面打印机
                 {
                     count.calc(ref a, ref b, ref c, ref d, ref i, ref page);
  
@@ -73,21 +74,21 @@ namespace WindowsFormsApplication3
             }
             else
             {
-                for (int i = 1; i <= page; i++)//小册子打印机
+                for (int i = start; i <= page; i++)//小册子打印机
                 {
                     count.calc(ref a, ref b, ref c, ref d, ref i, ref page);
 
                     if (checkBox2.Checked == false)
                     {
-                        textBox1.Text += d + a + " ";
+                        textBox1.Text += d + a ;
 
-                        textBox2.Text += b + c + " ";
+                        textBox2.Text += b + c ;
                     }
                     else
                     {
-                        textBox1.Text += d + a +" " ;
+                        textBox1.Text += d + a  ;
 
-                        textBox2.Text = b + c + " "+textBox2.Text;
+                        textBox2.Text = b + c +textBox2.Text;
                         
                     }
 
