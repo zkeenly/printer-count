@@ -66,16 +66,7 @@ namespace WindowsFormsApplication3
                 {
                     count.calc(ref a, ref b, ref c, ref d, ref i, ref page);
 
-                    if (checkBox1.Checked == false)//不启用小册子
-                    {
                         textBox3.Text += a + b + d + c;
-                    }
-                    else
-                    {
-                        textBox3.Text += a + d + c + b;
-                    }
-
-                    
                 }
             }
             else
@@ -83,7 +74,7 @@ namespace WindowsFormsApplication3
                 for (int i = start; i <= page; i++)//小册子打印机
                 {
                     count.calc(ref a, ref b, ref c, ref d, ref i, ref page);
-
+                    textBox3.Text += a + d + c + b; //双面打印机。
                     if (checkBox2.Checked == false)
                     {
                         textBox1.Text += d + a ;
@@ -95,7 +86,6 @@ namespace WindowsFormsApplication3
                         textBox1.Text += d + a  ;
 
                         textBox2.Text = b + c +textBox2.Text;
-                        
                     }
 
                     
