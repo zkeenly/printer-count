@@ -161,9 +161,9 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(415, 35);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(96, 16);
+            this.checkBox2.Size = new System.Drawing.Size(120, 16);
             this.checkBox2.TabIndex = 12;
-            this.checkBox2.Text = "反面逆序算法";
+            this.checkBox2.Text = "反面页数逆序算法";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // label6

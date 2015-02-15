@@ -65,9 +65,15 @@ namespace WindowsFormsApplication3
                 for (int i = start; i <= page; i++) //双面打印机
                 {
                     count.calc(ref a, ref b, ref c, ref d, ref i, ref page);
- 
 
-                    textBox3.Text += a+b+c+d;
+                    if (checkBox1.Checked == false)//不启用小册子
+                    {
+                        textBox3.Text += a + b + d + c;
+                    }
+                    else
+                    {
+                        textBox3.Text += a + d + c + b;
+                    }
 
                     
                 }
