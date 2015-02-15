@@ -31,6 +31,7 @@ namespace WindowsFormsApplication3
             textBox1.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
+            textBox7.Text = "";
             int start = Convert.ToInt32(textBox4.Text);
             int page = Convert.ToInt32(textBox5.Text);
 
@@ -66,22 +67,30 @@ namespace WindowsFormsApplication3
                 {
                     count.calc(ref a, ref b, ref c, ref d, ref i, ref page);
 
-                        textBox3.Text += a + b + d + c;
+                        textBox3.Text += a + b + d + c;    //反面逆序。
+                        textBox7.Text += a + b + c + d;    //反面正序。
                 }
             }
-            else
-            {
-                for (int i = start; i <= page; i++)//小册子打印机
+
+
+
+            else                                        //启用小册子。
+            { 
+                for (int i = start; i <= page; i++)
                 {
                     count.calc(ref a, ref b, ref c, ref d, ref i, ref page);
-                    textBox3.Text += d + a + b + c; //双面打印机。
-                    if (checkBox2.Checked == false)
+                    
+                    textBox7.Text += d + a + b + c; //双面打印机 反面正序。
+                    textBox3.Text += d + a + c + b; //双面打印机 反面逆序。
+
+
+                    if (checkBox2.Checked == false) //单面打印机    反面正序。
                     {
                         textBox1.Text += d + a ;
 
                         textBox2.Text += b + c ;
                     }
-                    else
+                    else            //反面逆序
                     {
                         textBox1.Text += d + a  ;
 
