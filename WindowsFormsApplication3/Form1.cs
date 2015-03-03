@@ -45,7 +45,7 @@ namespace WindowsFormsApplication3
 
                 for (int i = start; i <= page; i++) //单面打印机
                 {
-                    count.calc(ref a, ref b, ref c, ref d, ref i, ref page);
+                    count.calc(ref a, ref b, ref c, ref d, ref i,  page);
 
 
                     if (checkBox2.Checked == false)//不启用反面逆序算法
@@ -65,7 +65,7 @@ namespace WindowsFormsApplication3
 
                 for (int i = start; i <= page; i++) //双面打印机
                 {
-                    count.calc(ref a, ref b, ref c, ref d, ref i, ref page);
+                    count.calc(ref a, ref b, ref c, ref d, ref i,  page);
 
                         textBox3.Text += a + b + d + c;    //反面逆序。
                         textBox7.Text += a + b + c + d;    //反面正序。
@@ -76,31 +76,40 @@ namespace WindowsFormsApplication3
 
             else                                        //启用小册子。
             { 
-                for (int i = start; i <= page; i++)
+
+
+                //独立的单面打印机小册子算法
+                string ok1 = "";
+                string ok2 = "";
+
+                if (checkBox2.Checked == false) //单面打印机    反面正序。
                 {
-                    count.calc(ref a, ref b, ref c, ref d, ref i, ref page);
+                    count.clacbooklet(page, ref ok1, ref ok2);
+                    textBox1.Text = ok1;//正
+                    textBox2.Text = ok2;//反
+                    //textBox1.Text += d + a ;       //正面
+
+                    //textBox2.Text += b + c ;       //反面
+                }
+
+                else            //反面逆序
+                {
+                    count.clacbookletback(page, ref ok1, ref ok2);
+                    textBox1.Text = ok1;//正
+                    textBox2.Text = ok2;//反
+                    //textBox1.Text += d + a  ;
+                    //textBox2.Text = b + c +textBox2.Text;
+                }
+
+                for (int i = start; i <= page; i++)//双面打印机
+                {
+                    count.calc(ref a, ref b, ref c, ref d, ref i,  page);
                     
                     textBox7.Text += d + a + b + c; //双面打印机 反面正序。
                     textBox3.Text += d + a + c + b; //双面打印机 反面逆序。
 
 
-                    if (checkBox2.Checked == false) //单面打印机    反面正序。
-                    {
-                        textBox1.Text += d + a ;
-
-                        textBox2.Text += b + c ;
-                    }
-                    else            //反面逆序
-                    {
-                        textBox1.Text += d + a  ;
-
-                        textBox2.Text = b + c +textBox2.Text;
-                    }
-
                     
-
-
-
 
                 }
             }
